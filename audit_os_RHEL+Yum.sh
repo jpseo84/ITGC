@@ -57,7 +57,7 @@ commands=(
     "cat /etc/login.defs" 
     "cat /etc/group" 
     "ls -l /etc/pam.d" 
-    "cat /var/log/zypp/history"
+    "yum history list"
     "echo 'Using birth time:' && find /home -maxdepth 1 -type d -exec stat -c '%n : %w' {} \;"
     "echo 'Using modification time:' && find /home -maxdepth 1 -type d -exec stat -c '%n : %y' {} \;"
     "echo 'Using change time:' && find /home -maxdepth 1 -type d -exec stat -c '%n : %z' {} \;"
