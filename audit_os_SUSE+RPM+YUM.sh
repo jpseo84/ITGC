@@ -57,6 +57,8 @@ commands=(
     "cat /etc/login.defs" 
     "cat /etc/group" 
     "ls -l /etc/pam.d" 
+    "rpm -qa --last"
+    "sudo yum history list"
     "yum history list"
     "echo 'Using birth time:' && find /home -maxdepth 1 -type d -exec stat -c '%n : %w' {} \;"
     "echo 'Using modification time:' && find /home -maxdepth 1 -type d -exec stat -c '%n : %y' {} \;"
