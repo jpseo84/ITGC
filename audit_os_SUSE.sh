@@ -53,13 +53,14 @@ run_command() {
 }
 
 commands=(
-    "cat /etc/passwd" 
-    "cat /etc/login.defs" 
-    "cat /etc/group" 
-    "ls -l /etc/pam.d" 
+    "cat /etc/passwd"
+    "cat /etc/login.defs"
+    "cat /etc/group"
+    "ls -l /etc/pam.d && cat /etc/pam.d/common-auth && cat /etc/pam.d/common-password && cat /etc/pam.d/su && cat /etc/pam.d/login && cat /etc/securetty"
+    "sudo cat /etc/sudoers"
     "rpm -qa --last"
     "sudo yum history list"
-    "yum history list"
+    "cat /var/log/zypp/history"
     "echo 'Using birth time:' && find /home -maxdepth 1 -type d -exec stat -c '%n : %w' {} \;"
     "echo 'Using modification time:' && find /home -maxdepth 1 -type d -exec stat -c '%n : %y' {} \;"
     "echo 'Using change time:' && find /home -maxdepth 1 -type d -exec stat -c '%n : %z' {} \;"
