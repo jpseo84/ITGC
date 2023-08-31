@@ -53,10 +53,14 @@ run_command() {
 }
 
 commands=(
-    "cat /etc/passwd" 
-    "cat /etc/login.defs" 
-    "cat /etc/group" 
-    "ls -l /etc/pam.d" 
+    "cat /etc/passwd"
+    "cat /etc/login.defs"
+    "cat /etc/group"
+    "ls -l /etc/pam.d"
+    "cat /etc/pam.d/common-auth" #Debian-specific (Password complexity)
+    "cat /etc/pam.d/common-password" #Debian-specific (Password complexity)
+    "cat /etc/pam.d/su" #Debian-specific (Superuser - wheel group)
+    "sudo cat /etc/sudoers" #Debian-specific (Superuser - sudoers)
     "cat /var/log/apt/history.log"
     "echo 'Using birth time:' && find /home -maxdepth 1 -type d -exec stat -c '%n : %w' {} \;"
     "echo 'Using modification time:' && find /home -maxdepth 1 -type d -exec stat -c '%n : %y' {} \;"
