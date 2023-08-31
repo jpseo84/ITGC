@@ -53,17 +53,13 @@ run_command() {
 }
 
 commands=(
-    "cat /etc/passwd"
-    "cat /etc/login.defs"
-    "cat /etc/group"
-    "ls -l /etc/pam.d && cat /etc/pam.d/common-auth && cat /etc/pam.d/common-password && cat /etc/pam.d/su && cat /etc/pam.d/login && cat /etc/securetty"
-    "sudo cat /etc/sudoers"
-    "rpm -qa --last"
-    "sudo yum history list"
-    "cat /var/log/zypp/history"
-    "echo 'Using birth time:' && find /home -maxdepth 1 -type d -exec stat -c '%n : %w' {} \;"
-    "echo 'Using modification time:' && find /home -maxdepth 1 -type d -exec stat -c '%n : %y' {} \;"
-    "echo 'Using change time:' && find /home -maxdepth 1 -type d -exec stat -c '%n : %z' {} \;"
+    "echo '## Contents of /etc/passwd' && cat /etc/passwd"
+    "echo '## Contents of /etc/login.defs' && cat /etc/login.defs"
+    "echo '## Contents of /etc/group' && cat /etc/group"
+    "echo '## Contents of /etc/pam.d/system-auth' && cat /etc/pam.d/system-auth && echo '## Contents of /etc/pam.d/login' && cat /etc/pam.d/login && echo '## Contents of /etc/pam.d/su' && cat /etc/pam.d/su && echo '## Contents of /etc/pam.d/sudo' && cat /etc/pam.d/sudo"
+    "echo '## SUDOERs' && sudo cat /etc/sudoers"
+    "echo '## RPM History' && rpm -qa --last && echo '## YUM History' && sudo yum history list && echo '##Zypper History' && cat /var/log/zypp/history"
+    "echo 'Using birth time:' && find /home -maxdepth 1 -type d -exec stat -c '%n : %w' {} \; && echo 'Using modification time:' && find /home -maxdepth 1 -type d -exec stat -c '%n : %y' {} \; && echo 'Using change time:' && find /home -maxdepth 1 -type d -exec stat -c '%n : %z' {} \;"
 )
 
 previous_hash=""
